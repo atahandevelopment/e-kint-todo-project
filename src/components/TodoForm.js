@@ -172,7 +172,7 @@ const TodoForm = ({ initialValues, setIsEditing, dataSource, setDataSource }) =>
             name="date"
             rules={[
               {
-                required: false,
+                required: true,
                 message: "Please select date for Todo",
               },
               
