@@ -1,7 +1,7 @@
 import React from "react";
 function Header() {
   return (
-    <div><h1>TODO APP</h1></div>
+    <div><h1>E-KINT TODO APP</h1></div>
   )
 }
 

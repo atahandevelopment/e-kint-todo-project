@@ -46,9 +46,9 @@ const TodoForm = ({ initialValues, setIsEditing, dataSource, setDataSource }) =>
         todo: initialValues.todo,
         description: initialValues.description,
         completed: initialValues.completed,
-        date: dayjs(initialValues.date)
+        date: initialValues.date
       });
-     
+      
     }
   }, [initialValues]);
   console.log(initialValues);
@@ -59,11 +59,12 @@ const TodoForm = ({ initialValues, setIsEditing, dataSource, setDataSource }) =>
   
   
   const onFinish = async (values) => {
+    console.log(values.date)
     if(initialValues) {
       
       console.log(dataSource)
       let newObj = {
-        id:initialValues.id, ...values, 
+        id:initialValues.id, ...values, date:dayjs(values.date).format('DD-MM-YYYY HH:mm:ss')
       }
       let arr = dataSource.filter ((obj)=> obj.id !== initialValues.id )
       arr.push(newObj);
